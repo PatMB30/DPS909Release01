@@ -11,4 +11,5 @@ os:
   - windows
 script:
   - mvn clean verify
-  - mvn -Dtest=FoobarTestMain test
+  - mvn -Dtest=FoobarTest test
+  - java FoobarTestMain
