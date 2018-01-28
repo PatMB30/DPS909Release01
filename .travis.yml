@@ -10,5 +10,5 @@ jdk:
 os:
   - windows
 script:
-  - nvm clean verify
+  - mvn clean verify
   - ./scripts/run-tests.sh
