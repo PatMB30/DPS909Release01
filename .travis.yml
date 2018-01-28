@@ -10,8 +10,5 @@ jdk:
 os:
   - windows
 script:
-  - mvn clean verify
   - mvn -Dtest=FoobarTest test
-  - javac FoobarTestMain.java
-  - java FoobarTestMain
-  - ./scripts/run-test.sh
+  - ./scripts/run-tests.sh
