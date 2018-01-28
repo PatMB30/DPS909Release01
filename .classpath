@@ -16,13 +16,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="D:/Desktop Copy/School/Semester 9 - Winter 2018/DPS909 - Open Source Project/libphonenumber-8.8.9.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Desktop Copy/School/Semester 9 - Winter 2018/DPS909 - Open Source Project/json-simple-1.1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Downloads/jackson-core-2.9.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Downloads/jackson-databind-2.9.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Downloads/jackson-annotations-2.9.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Downloads/gson-2.6.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Downloads/json-20171018.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

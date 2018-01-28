@@ -13,18 +13,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.i18n.phonenumbers.PhoneNumberMatch;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import org.json.JSONObject;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 /**
  * Servlet implementation class JavaServer01
@@ -34,6 +27,9 @@ public class JavaServer01 extends HttpServlet
 {
 	private static String userInput;
 	private static ArrayList<String> phoneNumbers;
+	
+
+	private HttpServletResponse res;
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -106,6 +102,7 @@ public class JavaServer01 extends HttpServlet
 				//System.out.print(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json1));
 			}
 			//testObj.clear();
+			saveResponse(response);
 		}
 	}
 
@@ -172,7 +169,8 @@ public class JavaServer01 extends HttpServlet
 				//System.out.print(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json1));
 			}
 				
-				
+			saveResponse(response);	
+			
 			
 			//testObj.clear();
 		}
@@ -199,4 +197,17 @@ public class JavaServer01 extends HttpServlet
 		return buf.substring( baseUrl.length() );
 	}
 
+	private void saveResponse(HttpServletResponse response)
+	{
+		res = response;
+	}
+	
+	public HttpServletResponse getResponse()
+	{
+		return res;
+	}
+	
+	public static ArrayList<String> getPhoneNumbers() {
+		return phoneNumbers;
+	}
 }
