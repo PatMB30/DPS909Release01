@@ -11,4 +11,4 @@ os:
   - windows
 script:
   - mvn clean verify
-  - ./scripts/run-tests.sh
+  - mvn -Dtest=FoobarTest test
