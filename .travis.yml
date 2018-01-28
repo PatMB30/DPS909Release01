@@ -1,4 +1,5 @@
 language: java
+sudo: false
 install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - mvn test -B
@@ -8,3 +9,6 @@ jdk:
   - openjdk7
 os:
   - windows
+script:
+  - nvm clean verify
+  - ./scripts/run-tests.sh
