@@ -1,1 +1,0 @@
-java -cp ./jar/junit-4.8.2.jar org.junit.runner.JUnitCore FoobarTest

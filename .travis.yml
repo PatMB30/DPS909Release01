@@ -11,4 +11,3 @@ os:
   - windows
 script:
   - mvn -Dtest=FoobarTest test
-  - ./scripts/run-tests.sh
