@@ -1,4 +1,4 @@
-package release01;
+package test.java;
 //import static org.mockito.Mockito.verify;
 //import static org.mockito.Mockito.when;
 
@@ -18,6 +18,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import junit.framework.TestCase;
+import release01.JavaServer01;
 
 import org.apache.log4j.BasicConfigurator;
 import org.junit.*;
