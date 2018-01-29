@@ -5,6 +5,7 @@ package release01;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
 
 import javax.servlet.ServletException;
 import org.apache.commons.collections4.map.LinkedMap;
@@ -21,7 +22,7 @@ import junit.framework.TestCase;
 import org.apache.log4j.BasicConfigurator;
 import org.junit.*;
 
-public class FoobarTest extends TestCase
+public class FoobarTest 
 {
 
 	
