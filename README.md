@@ -28,14 +28,14 @@ using Google's libphonenumber library to retrieve phone numbers in one of two wa
     page for the web browser should be blank. The URL should show "http://localhost:8080/DPS909Release01/JavaServer01"
     if you've kept the same project folder and Java class names.
     
-*   -----> Testing the GET functionality
+*   -----> Testing the GET functionality.
     After completing the steps mentioned above, add a "?" followed by a string containing a phone number to the end 
     of the current URL. You should receive a parsed JSON response on the screen containing phone number(s) if it 
     found any. 
     NOTE: if the string you entered did not contain any phone numbers, the site will send back an HTTP500 error
           caused by unexpected input.
           
-*   -----> Testing the POST functionality
+*   -----> Testing the POST functionality.
     To test the post functionality, follow the initial steps mentioned above, and add "?" and the keyword
     "file" to the end of the current URL. This will tell the server to go look at the input file named "Base64.txt"
     inside the project's Java Resources -> src -> release01 folder. Any test input should be added onto the file 
