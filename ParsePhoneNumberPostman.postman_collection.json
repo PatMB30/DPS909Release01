@@ -1,0 +1,277 @@
+{
+	"info": {
+		"name": "ParsePhoneNumberPostman",
+		"_postman_id": "77f84407-dafd-a56e-b553-1cd2fada4953",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get-TwoNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "36f1f519-203e-486f-a5d8-f045ebdb42c8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function() {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"response has valid json\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"Two phone number returned\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData['National Number: 9059059007']).to.eql(\"Country Code: 1 \");",
+							"    pm.expect(jsonData['National Number: 9059059005']).to.eql(\"Country Code: 1 \");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/DPS909Release01/JavaServer01?9059059007&9059059005",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"DPS909Release01",
+						"JavaServer01"
+					],
+					"query": [
+						{
+							"key": "9059059007",
+							"value": "",
+							"equals": false
+						},
+						{
+							"key": "9059059005",
+							"value": "",
+							"equals": false
+						}
+					]
+				},
+				"description": "two param phone number request"
+			},
+			"response": []
+		},
+		{
+			"name": "Get-OneNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3888cba1-0bb9-4e33-bb9f-43663823c2f4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function() {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"response has valid json\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"Single phone number returned\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log (jsonData['National Number: 9059059007']);",
+							"    pm.expect(jsonData['National Number: 9059059007']).to.eql(\"Country Code: 1 \");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/DPS909Release01/JavaServer01?9059059007",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"DPS909Release01",
+						"JavaServer01"
+					],
+					"query": [
+						{
+							"key": "9059059007",
+							"value": "",
+							"equals": false
+						}
+					]
+				},
+				"description": "single phone number for Get"
+			},
+			"response": []
+		},
+		{
+			"name": "GetThreeNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf40de86-704e-4d86-a467-7a30b09cedfb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function() {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"response has valid json\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"Three phone number returned\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData['National Number: 9059059007']).to.eql(\"Country Code: 1 \");",
+							"    pm.expect(jsonData['National Number: 9059059005']).to.eql(\"Country Code: 1 \");",
+							"    pm.expect(jsonData['National Number: 9059059006']).to.eql(\"Country Code: 1 \");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/DPS909Release01/JavaServer01?9059059007&9059059005&9059059006",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"DPS909Release01",
+						"JavaServer01"
+					],
+					"query": [
+						{
+							"key": "9059059007",
+							"value": "",
+							"equals": false
+						},
+						{
+							"key": "9059059005",
+							"value": "",
+							"equals": false
+						},
+						{
+							"key": "9059059006",
+							"value": "",
+							"equals": false
+						}
+					]
+				},
+				"description": "This is a GET request which passes in 3 phone numbers separated by &"
+			},
+			"response": []
+		},
+		{
+			"name": "GetTwoNumberSpaceDelimit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b1edaf5-7252-4a48-a673-bd546f795208",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response status is 500\", function() {",
+							"    pm.response.to.have.status(500);",
+							"})",
+							"",
+							"pm.test(\"response is server error\", function () {",
+							"     pm.response.to.be.serverError; ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/DPS909Release01/JavaServer01?9059059007%209059059005",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"DPS909Release01",
+						"JavaServer01"
+					],
+					"query": [
+						{
+							"key": "9059059007%209059059005",
+							"value": "",
+							"equals": false
+						}
+					]
+				},
+				"description": "this will pass two numbers delimited by spaces\nthe API should return an error"
+			},
+			"response": []
+		},
+		{
+			"name": "POST-TestInternalFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/DPS909Release01/JavaServer01?file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"DPS909Release01",
+						"JavaServer01"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": "",
+							"equals": false
+						}
+					]
+				},
+				"description": "Sends a Post request \nSince API handles the POST method by using an internal file, the mockup POST request will not contain a file upload.\nInstead, it will only verify the results from the doPost() call."
+			},
+			"response": []
+		}
+	]
+}
